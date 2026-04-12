@@ -1,4 +1,4 @@
-
+//just function to generate the random code
 
 export const generateRandomCode = () => {
     const char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
