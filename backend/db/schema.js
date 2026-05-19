@@ -10,7 +10,11 @@ const urlSchema = new mongoose.Schema({
         required: true,
         unique: true,
         index: true
-    } 
+    },
+    click_count: {          // ← new field, same level as the others
+        type: Number,
+        default: 0
+    }
 });
 
 

@@ -31,7 +31,10 @@ export const handleRedirect = async (req, res) => {
     try{
         const { short_code }  = req.params; // 1. Grab the code from the URL
         // 2. Look for it in your "Urls" collection
-        const entry = await url.findOne({ short_code });
+        const entry = await url.findOneAndUpdate(
+            { short_code },
+            { $inc: {click_count: 1} }
+        );
 
         // 3. If it exists, send the user away!
         if (entry) {
